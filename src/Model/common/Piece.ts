@@ -1,8 +1,8 @@
 export type Color = 'white' | 'black';
 
 export interface Position {
-  file: string; // coluna: 'a' até 'h'
-  rank: number; // linha: 1 até 8
+  file: string; 
+  rank: number; 
 }
 
 export abstract class Piece {
@@ -10,11 +10,11 @@ export abstract class Piece {
   private rank: number;
   private color: Color;
 
-  constructor(file: string, rank: number, color: Color) {
-    this.file = file;
-    this.rank = rank;
-    this.color = color;
-  }
+ constructor(position: Position, color: Color) {
+  this.file = position.file;
+  this.rank = position.rank;
+  this.color = color;
+}
 
   get positionFile(): string {
     return this.file;
